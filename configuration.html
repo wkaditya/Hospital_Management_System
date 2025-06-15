@@ -1,0 +1,74 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Configuration - Hotel Management System</title>
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background-color: #121212;
+            color: #ffffff;
+        }
+        .sidebar {
+            height: 100vh;
+            width: 250px;
+            position: fixed;
+            background-color: #1f1f1f;
+            padding-top: 20px;
+            display: flex;
+            flex-direction: column;
+        }
+        .sidebar a {
+            padding: 15px 20px;
+            text-decoration: none;
+            color: #ccc;
+            font-weight: bold;
+            transition: 0.3s;
+        }
+        .sidebar a:hover {
+            background-color: #333;
+            color: #fff;
+        }
+        .sidebar a.active {
+            background-color: #333;
+            color: #00bfff;
+        }
+        .content {
+            margin-left: 260px;
+            padding: 20px;
+        }
+        .card {
+            background-color: #1f1f1f;
+            border: 1px solid #333;
+            border-radius: 10px;
+            padding: 20px;
+            margin: 10px;
+            display: inline-block;
+            width: 250px;
+            text-align: center;
+        }
+        a.download-link {
+            color: #00bfff;
+            text-decoration: none;
+        }
+    </style>
+</head>
+<body>
+
+<div class="sidebar">
+    <h2 style="color: white; text-align: center;">Hotel Project</h2>
+    <a href="index.html" class="">Home</a>
+    <a href="overview.html" class="">Overview</a>
+    <a href="configuration.html" class="active">Configuration</a>
+    <a href="demonstration.html" class="">Demonstration</a>
+    <a href="downloads.html" class="">Downloads</a>
+</div>
+
+<div class="content">
+    <h1>Configuration</h1><ul><li>Router</li><li>Switch</li><li>Server</li><li>Reception PC</li><li>Wi-Fi for guests</li></ul>
+</div>
+
+</body>
+</html>
