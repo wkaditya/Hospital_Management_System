@@ -1,74 +1,144 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Home - Hotel Management System</title>
+    <title>Hospital Management System</title>
     <style>
         body {
             margin: 0;
-            font-family: Arial, sans-serif;
+            font-family: Times New Roman, sans-serif;
             background-color: #121212;
-            color: #ffffff;
+            color: white;
         }
         .sidebar {
-            height: 100vh;
-            width: 250px;
             position: fixed;
+            left: 0;
+            top: 0;
+            bottom: 0;
+            width: 250px;
             background-color: #1f1f1f;
             padding-top: 20px;
-            display: flex;
-            flex-direction: column;
+        }
+        .sidebar h2 {
+            text-align: center;
+            margin-bottom: 30px;
+            font-size: 24px;
         }
         .sidebar a {
             padding: 15px 20px;
             text-decoration: none;
-            color: #ccc;
-            font-weight: bold;
+            display: block;
+            color: white;
             transition: 0.3s;
         }
         .sidebar a:hover {
-            background-color: #333;
-            color: #fff;
-        }
-        .sidebar a.active {
-            background-color: #333;
-            color: #00bfff;
+            background-color: #3f51b5;
         }
         .content {
-            margin-left: 260px;
+            margin-left: 250px;
             padding: 20px;
         }
-        .card {
+        .section {
+            display: none;
+        }
+        .active {
+            display: block;
+        }
+        .file-box {
             background-color: #1f1f1f;
-            border: 1px solid #333;
-            border-radius: 10px;
             padding: 20px;
-            margin: 10px;
+            border-radius: 10px;
             display: inline-block;
-            width: 250px;
+            margin: 10px;
+            width: 200px;
             text-align: center;
+            border: 1px solid #333;
         }
-        a.download-link {
-            color: #00bfff;
-            text-decoration: none;
+        .file-box:hover {
+            background-color: #3f51b5;
         }
     </style>
 </head>
 <body>
 
 <div class="sidebar">
-    <h2 style="color: white; text-align: center;">Hotel Project</h2>
-    <a href="index.html" class="active">Home</a>
-    <a href="overview.html" class="">Overview</a>
-    <a href="configuration.html" class="">Configuration</a>
-    <a href="demonstration.html" class="">Demonstration</a>
-    <a href="downloads.html" class="">Downloads</a>
+    <h2>Hospital Project</h2>
+    <a href="#" onclick="showSection('home')">Home</a>
+    <a href="#" onclick="showSection('overview')">Overview</a>
+    <a href="#" onclick="showSection('configuration')">Configuration</a>
+    <a href="#" onclick="showSection('demonstration')">Demonstration</a>
+    <a href="#" onclick="showSection('downloads')">Downloads</a>
 </div>
 
 <div class="content">
-    <h1>Home</h1><p>Welcome to the Hotel Management System Project website. Explore the pages to learn more about the project.</p>
+    <div id="home" class="section active">
+        <h1>Hospital Management System</h1>
+        <p>Design and Simulation of a Hospital Management Network Using Cisco Packet Tracer. The healthcare network links different departments including IT, Clinical, Reception, General Ward, Private Ward, and Guest Lobby with routers, switches, and wireless access points. The simulation confirms inter-department communication, server access, and wireless guest access.</p>
+    </div>
+
+    <div id="overview" class="section">
+        <h1>Overview</h1>
+        <p>The project makes use of Cisco Packet Tracer where a scalable and secure network of a hospital is simulated. It addresses inter-router communication, departmental segregation, and server access by multiple subnets.</p>
+        <p><b>Objectives:</b></p>
+        <ul>
+            <li>Design modular hospital LAN segmented by department</li>
+            <li>Install static IP routing between routers for inter-department communication</li>
+            <li>Deploy centralized DNS, HTTP, FTP servers</li>
+            <li>Configure wireless guest network isolated from internal hospital network</li>
+            <li>Test network performance via ICMP and service-based testing</li>
+        </ul>
+    </div>
+
+    <div id="configuration" class="section">
+        <h1>Configuration</h1>
+        <p><b>Network Topology:</b></p>
+        <ul>
+            <li>IT Department (192.168.1.0/24)</li>
+            <li>Clinical Area (192.168.2.0/24)</li>
+            <li>Reception Area (192.168.3.0/24)</li>
+            <li>General Ward (192.168.4.0/24)</li>
+            <li>Private Ward (192.168.5.0/24)</li>
+            <li>Guest Lobby (10.0.0.0/24)</li>
+        </ul>
+        <p>Routers connected with serial DCE cables on point-to-point subnets (192.168.6.0/30, 192.168.7.0/30, 192.168.9.0/30).</p>
+        <p><b>Server Deployment:</b> DNS, HTTP, and FTP servers hosted under IT and Reception departments, accessible from all subnets.</p>
+        <p><b>Wireless Access:</b> DHCP-enabled wireless router issues dynamic IP to guests, restricted from internal access.</p>
+        <p><b>Routing:</b> Static routing configured on all routers with next-hop IPs for inter-department communication.</p>
+    </div>
+
+    <div id="demonstration" class="section">
+        <h1>Demonstration</h1>
+        <p>Simulation results show:</p>
+        <ul>
+            <li>Effective communication across departments</li>
+            <li>Servers are accessible from all subnets</li>
+            <li>Wireless clients receive DHCP IP and access web services securely</li>
+            <li>Static routing ensures proper packet forwarding</li>
+        </ul>
+        <p>Network performance verified through ICMP ping tests, HTTP/FTP access tests, and DHCP verification on wireless clients.</p>
+    </div>
+
+    <div id="downloads" class="section">
+        <h1>Downloads</h1>
+        <div class="file-box">
+            <h3>Packet Tracer File</h3>
+            <a href="hospital_project.pkt" download>Download</a>
+        </div>
+        <div class="file-box">
+            <h3>Project Report</h3>
+            <a href="cn_report.pdf" download>Download</a>
+        </div>
+    </div>
 </div>
+
+<script>
+    function showSection(sectionId) {
+        document.querySelectorAll('.section').forEach(function(sec) {
+            sec.classList.remove('active');
+        });
+        document.getElementById(sectionId).classList.add('active');
+    }
+</script>
 
 </body>
 </html>
