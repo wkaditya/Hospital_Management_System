@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+html_content = '''<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -77,17 +77,18 @@
     </div>
 
     <div id="overview" class="section">
-        <h1>Overview</h1>
-        <p>The project makes use of Cisco Packet Tracer where a scalable and secure network of a hospital is simulated. It addresses inter-router communication, departmental segregation, and server access by multiple subnets.</p>
-        <p><b>Objectives:</b></p>
-        <ul>
-            <li>Design modular hospital LAN segmented by department</li>
-            <li>Install static IP routing between routers for inter-department communication</li>
-            <li>Deploy centralized DNS, HTTP, FTP servers</li>
-            <li>Configure wireless guest network isolated from internal hospital network</li>
-            <li>Test network performance via ICMP and service-based testing</li>
-        </ul>
-    </div>
+    <h1>Overview</h1>
+    <p>The project makes use of Cisco Packet Tracer where a scalable and secure network of a hospital is simulated. It addresses inter-router communication, departmental segregation, and server access by multiple subnets.</p>
+    <p><b>Objectives:</b></p>
+    <ul>
+        <li>Design modular hospital LAN segmented by department</li>
+        <li>Install static IP routing between routers for inter-department communication</li>
+        <li>Deploy centralized DNS, HTTP, FTP servers</li>
+        <li>Configure wireless guest network isolated from internal hospital network</li>
+        <li>Test network performance via ICMP and service-based testing</li>
+    </ul>
+    <img src="network_topology.jpg" alt="FTP Project Overview" style="max-width: 100%; height: auto; display: block; margin-top: 20px;">
+</div>
 
     <div id="configuration" class="section">
         <h1>Configuration</h1>
@@ -122,7 +123,7 @@
         <h1>Downloads</h1>
         <div class="file-box">
             <h3>Packet Tracer File</h3>
-            <a href="hospital_project.pkt" download>Download</a>
+            <a href="Hospital_Network_Design[1].pkt" download>Download</a>
         </div>
         <div class="file-box">
             <h3>Project Report</h3>
@@ -141,4 +142,10 @@
 </script>
 
 </body>
-</html>
+</html>'''
+
+# Save clean HTML to file
+with open("index.html", "w", encoding="utf-8") as file:
+    file.write(html_content)
+
+print("Clean website successfully generated as 'index.html'")
