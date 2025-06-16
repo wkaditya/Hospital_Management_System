@@ -1,4 +1,4 @@
-html_content = '''<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -87,7 +87,8 @@ html_content = '''<!DOCTYPE html>
         <li>Configure wireless guest network isolated from internal hospital network</li>
         <li>Test network performance via ICMP and service-based testing</li>
     </ul>
-    <img src="network_topology.jpg" alt="FTP Project Overview" style="max-width: 100%; height: auto; display: block; margin-top: 20px;">
+    <p><b>Network Topology:</b></p>
+    <img src="network_topology.jpg" alt="FTP Project Overview" style="max-width: 90%; height: auto; display: block; margin-top: 20px;">
 </div>
 
     <div id="configuration" class="section">
@@ -142,10 +143,4 @@ html_content = '''<!DOCTYPE html>
 </script>
 
 </body>
-</html>'''
-
-# Save clean HTML to file
-with open("index.html", "w", encoding="utf-8") as file:
-    file.write(html_content)
-
-print("Clean website successfully generated as 'index.html'")
+</html>
